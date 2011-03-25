@@ -35,13 +35,9 @@ class VkontakteApiCaller
     end
     raise ArgumentError.new(message + " for API type #{@api_type}") if message.present?
   end
-
-#  def read_args(args, *keys)
-#    return *keys.collect{|k| args[k]}
-#  end
   
   def http_headers
-    @http_headers || {}
+    @http_headers ||= {}
   end
 
   def http
@@ -111,7 +107,7 @@ class VkontakteApiCaller
   def api_sig(sig_str)
     puts "[sig_str] #=> #{sig_str}"
     sig_md5 = Digest::MD5.hexdigest(sig_str)
-    puts "[sig_md5] #=> #{sig_str}"
+    puts "[sig_md5] #=> #{sig_md5}"
     sig_md5
   end
 
