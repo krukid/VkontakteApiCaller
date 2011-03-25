@@ -1,0 +1,19 @@
+VkontakteApiCaller --
+
+Ruby class for calling vkontakte.ru API methods
+
+supports request formats for server and desktop application types (see api_type)
+
+Basic usage:
+
+##########
+vac = VkontakteApiCaller.new(@app_id, :desktop, {:mid=>@uid, :sid=>@sid, :secret=>@secret})
+
+vac.post("wall.post", {:owner_id=>@oid, :message=>"hello, world"}, {:v=>3.0, :format=>"json"})
+
+vac.get("getUserSettings", {}, {:v=>3.0, :format=>"xml"})
+
+##########
+vac = VkontakteApiCaller.new(@app_id, :server, {:secret=>@secret})
+
+vac.get("secure.getAppStatus", {:uid=>@uid}, {:v=>3.0})
