@@ -1,3 +1,5 @@
+IMPORTANT: currently the use of this API is discouraged, if at all supported. Use OAuth
+
 VkontakteApiCaller --
 
 Ruby class for calling vkontakte.ru API methods
